@@ -37,18 +37,18 @@ Para utilizar el proyecto, sigue los siguientes pasos:
   Si deseas contribuir a este proyecto, sigue los pasos:
     1. Crea un fork del proyecto.
     2. Crea una nueva rama:
-      ```bash
+  ```bash
       git checkout -b feature/nueva-caracteristic
-      ```       
+  ```       
     4. Realiza tus cambios y haz un commit:
-       ```bash
+  ```bash
        git add .
        git commit -m "Añade nueva característica"
-       ```
+  ```
     5. Haz un push a tu rama:
-      ```bash
-         git push origin feature/nueva-caracteristica
-      ```
+  ```bash
+     git push origin feature/nueva-caracteristica
+  ```
     6. Abre un Pull Request en GitHub.
 
 ## Colaboradores
@@ -67,6 +67,7 @@ python manage.py startapp tienda (crear app)
 ```
 * En caso de ya tener la aplicación copiada:
 ```bash
+pip install -r requirements.txt
 myvenv\Scripts\activate
 python manage.py runserver
 python manage.py insert_data (para insertar data sql)
