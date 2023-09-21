@@ -67,6 +67,8 @@ python manage.py startapp tienda (crear app)
 ```
 * En caso de ya tener la aplicación copiada:
 ```bash
+myvenv\Scripts\activate
+python manage.py runserver
 python manage.py insert_data (para insertar data sql)
 //Migration
 python manage.py makemigrations tienda
