@@ -264,3 +264,15 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django
+activate.csh
+myvenv/bin/pip3
+myvenv/bin/pip3.11
+myvenv/bin/python
+myvenv/bin/python3
+myvenv/bin/python3.11
+myvenv/bin/activate.fish
+myvenv/bin/Activate.ps1
+myvenv/bin/django-admin
+myvenv/bin/django-admin.py
+myvenv/bin/pip
+myvenv/bin/sqlformat
