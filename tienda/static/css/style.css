@@ -126,8 +126,11 @@
 .acciones {
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  margin-top: -200px;
+  float: right;
+  color: rgba(255, 255, 255, 1);
 }
-
 .acciones a {
   margin-right: 10px;
 }
@@ -1430,4 +1433,16 @@
 
 section[id='h.4a9d518ede350020_0'] .IFuOkc:before {
   opacity: 0.2;
+}
+.producto {display: block;}
+
+.button {
+  background-color: #6b450e;
+  border: none;
+  color: white;
+  padding: 10px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }

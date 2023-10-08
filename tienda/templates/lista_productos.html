@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="../static/css/style.css" data-id="_cl" nonce="">
 
 </head>
-
 <body>
     <div>
         <nav class="navbar">
             <div class="left">
-                <img src="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383"
+                <img src="../static/css/img/logo DepositIA.jpg" 
                     alt="Logo" class="logo">
                 <a href="/view/deposit-ia/inicio?authuser=0"><span>DEPOSIT IA</span></a>
             </div>
@@ -53,7 +52,7 @@
         </nav>
     </div>
     <form id="formularioProducto">
-        {% csrf_token %}
+        <!--{% csrf_token %}-->
         <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -99,26 +98,69 @@
                 <h1>Productos</h1>
             </div>
             <div class="col-md-4 d-flex justify-content-end align-items-center">
-                <a href="{% url 'crear_producto' %}" class="btn btn-primary">Nuevo Producto</a>
             </div>
         </div>
-        {% for producto in productos %}
+        <!--{% for producto in productos %}-->
         <div class="col-md-12 producto">
-            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">
+            <p class="producto">
+                <section id="pr1" class="tornillos">
+            <img src="../static/css/img/tornillos.png" alt="Tornillos">
             <div class="producto-info">
-                <h3>{{ producto.nombre }}</h3>
-                <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
+                <h3>Tornillos Autoperforantes</h3>
+                <h5>Cantidad: 330</h5>
+                <h5>SKU: 195-05</h5>
             </div>
             <div class="acciones">
-                <a href="#">Ver</a>
-                <a href="#">Modificar</a>
-                <a href="#">Eliminar</a>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Ver</a>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Modificar</a>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Eliminar</a>
+                </section>
+                <section id="pr2" class="ch">
+                <img src="../static/css/img/Caja de herramientas Stanley.png" alt="CajaHerramientas">
+            <div class="producto-info">
+                <h3>Caja de herramientas Stanley</h3>
+                <h5>Cantidad: 200</h5>
+                <h5>SKU: 195-06</h5>
             </div>
+            <div class="acciones">
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Ver</a>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Modificar</a>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Eliminar</a>
+                </section>
+                <section id="pr3" class="martillo">
+                    <img src="../static/css/img/Martillo Stanley.jpg" alt="Martillo">
+            <div class="producto-info">
+                <h3>Martillo Stanley</h3>
+                <h5>Cantidad: 1500</h5>
+                <h5>SKU: 195-07</h5>
+            </div>
+            <div class="acciones">
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Ver</a>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Modificar</a>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <a href="#"class="button">Eliminar</a>
+                </section>
+                </p>
+            </div>
+                </div>
         </div>
-        {% endfor %}
+        <!--{% endfor-->
     </div>
     </div>
-
     <!-- Resto de tu código HTML... -->
     <script>
         document.getElementById('formularioProducto').addEventListener('submit', function (e) {
