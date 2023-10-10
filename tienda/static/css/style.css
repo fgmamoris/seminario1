@@ -21,9 +21,18 @@
     font-size: 36pt;
   }
 }
+
+body.inicio {
+  background-image: url('/static/depositoInicio.jpg');
+  background-size: cover;
+  
+}
+
+
+
 /* Estilos generales del navbar */
 .navbar {
-  background-color: white;
+  background-color: rgb(129, 177, 216);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +70,7 @@
 
 .menu a {
   text-decoration: none;
-  color: black;
+  color: rgb(10, 10, 10);
   padding: 5px 10px;
   position: relative;
 }
@@ -74,8 +83,8 @@
 .submenu-content {
   display: none;
   position: absolute;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(63, 108, 158);
+  box-shadow: 0 2px 4px rgba(154, 155, 189, 0.2);
   top: 100%; /* Ajuste para que el submenú aparezca en la misma posición que el menú */
   left: 0; /* Ajuste para que el submenú aparezca a la derecha del menú */
   min-width: 150px; /* Ancho mínimo del submenú */
@@ -103,8 +112,8 @@
 /* Estilos del elemento seleccionado */
 .menu a:hover,
 .menu a.selected {
-  background-color: black;
-  color: white;
+  background-color: rgb(61, 54, 153);
+  color: rgb(0, 0, 0);
 }
 
 /* Nuevos estilos agregados */
