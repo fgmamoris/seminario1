@@ -6,11 +6,12 @@
     <title>Lista de Productos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css" data-id="_cl" nonce="">
-
+    {% load static %}
+    
 </head>
 
 <body>
-    
+
     <div>
         <nav class="navbar">
             <div class="left">
@@ -25,8 +26,7 @@
                     <a href="#">Stock</a>
                     <div class="submenu-content">
                         <ul>
-                            <li><a data-toggle="modal" data-target="#modalProducto">Crear
-                                    Producto</a></li>
+                            <li><a data-toggle="modal" data-target="#modalProducto">Crear Producto</a></li>
                             <li><a href="{% url 'lista_productos' %}">Productos</a></li>
                         </ul>
                     </div>
@@ -105,7 +105,7 @@
         </div>
         {% for producto in productos %}
         <div class="col-md-12 producto">
-            <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">
+            <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}">
             <div class="producto-info">
                 <h3>{{ producto.nombre }}</h3>
                 <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
