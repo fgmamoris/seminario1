@@ -1,168 +1,230 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Productos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/style.css" data-id="_cl" nonce="">
+  <head>
     {% load static %}
-    
-</head>
+    <meta charset="UTF-8" />
+    <title>Lista de Productos</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
 
-<body>
-
+  <body>
     <div>
-        <nav class="navbar">
-            <div class="left">
-                <img src="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383"
-                    alt="Logo" class="logo">
-                <a href="/view/deposit-ia/inicio?authuser=0"><span>DEPOSIT IA</span></a>
+      <nav class="navbar">
+        <div class="left">
+          <img src="../static/img/logo-depositia.jpg" alt="Logo" class="logo" />
+          <span>DEPOSIT IA</span>
+        </div>
+        <ul class="menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li class="submenu">
+            <a href="#">Stock</a>
+            <div class="submenu-content">
+              <ul>
+                <li>
+                  <a data-toggle="modal" data-target="#modalProducto"
+                    >Crear Producto</a
+                  >
+                </li>
+                <li><a href="{% url 'lista_productos' %}">Productos</a></li>
+              </ul>
             </div>
-            <ul class="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li class="submenu">
-                    <a href="#">Stock</a>
-                    <div class="submenu-content">
-                        <ul>
-                            <li><a data-toggle="modal" data-target="#modalProducto">Crear Producto</a></li>
-                            <li><a href="{% url 'lista_productos' %}">Productos</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="submenu">
-                    <a href="#">Logistica</a>
-                    <div class="submenu-content">
-                        <ul>
-                            <li><a href="#">Transportistas</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="submenu">
-                    <a href="">Pedidos</a>
-                    <div class="submenu-content">
-                        <ul>
-                            <li><a href="">Nuevo pedido</a></li>
-                            <li><a href="">Pedidos</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Crear Cuenta</a></li>
-                <li><a href="#">Ingresar</a></li>
-            </ul>
-        </nav>
+          </li>
+          <li class="submenu">
+            <a href="#">Logistica</a>
+            <div class="submenu-content">
+              <ul>
+                <li><a href="#">Transportistas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="submenu">
+            <a href="">Pedidos</a>
+            <div class="submenu-content">
+              <ul>
+                <li><a href="">Nuevo pedido</a></li>
+                <li><a href="">Pedidos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Crear Cuenta</a></li>
+          <li><a href="#">Ingresar</a></li>
+        </ul>
+      </nav>
     </div>
     <form id="formularioProducto">
-        {% csrf_token %}
-        <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Formulario de Producto</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Agrega tu formulario aquí -->
-                        <div class="form-group">
-                            <label for="nombre">Nombre del Producto</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre del Producto"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="cantidad">Cantidad</label>
-                            <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="precio">Precio</label>
-                            <input type="number" class="form-control" id="precio" placeholder="Precio" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="descripcion">Descripción</label>
-                            <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción"
-                                required></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Crear</button>
-                    </div>
-                </div>
+      {% csrf_token %}
+      <div
+        class="modal fade"
+        id="modalProducto"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Formulario de Producto
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body">
+              <!-- Agrega tu formulario aquí -->
+              <div class="form-group">
+                <label for="nombre">Nombre del Producto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Nombre del Producto"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cantidad"
+                  placeholder="Cantidad"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="precio">Precio</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="precio"
+                  placeholder="Precio"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  class="form-control"
+                  id="descripcion"
+                  rows="3"
+                  placeholder="Descripción"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+          </div>
         </div>
+      </div>
     </form>
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-8 d-flex align-items-center">
-                <h1>Productos</h1>
-            </div>
-            <div class="col-md-4 d-flex justify-content-end align-items-center">
-                <a data-toggle="modal"  class="btn btn-primary" data-target="#modalProducto">Nuevo Producto</a>
-            </div>
+      <div class="row">
+        <div class="col-md-8 d-flex align-items-center">
+          <h1>Productos</h1>
         </div>
-        {% for producto in productos %}
-        <div class="col-md-12 producto">
-            <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}">
-            <div class="producto-info">
-                <h3>{{ producto.nombre }}</h3>
-                <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
-            </div>
-            <div class="acciones">
-                <a href="#">Ver</a>
-                <a href="#">Modificar</a>
-                <a href="#">Eliminar</a>
-            </div>
+        <div class="col-md-4 d-flex justify-content-end align-items-center">
+          <a
+            data-toggle="modal"
+            class="btn btn-primary"
+            data-target="#modalProducto"
+            >Nuevo Producto</a
+          >
+        </div>
+      </div>
+      {% for producto in productos %}
+      <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+      <div class="col-md-12 producto">
+        <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
+        <div class="producto-info">
+          <h3>{{ producto.nombre }}</h3>
+          <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
+        </div>
+        <div class="acciones">
+          <div class="col-md-4 d-flex justify-content-end align-items-center">
+            <a href="#" id="button">Ver</a>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end align-items-center">
+            <a href="#" class="button">Modificar</a>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end align-items-center">
+            <a href="#" class="button">Eliminar</a>
+          </div>
+          <!-- <section id="pr2" class="ch"> -->
         </div>
         {% endfor %}
-    </div>
+      </div>
     </div>
 
     <!-- Resto de tu código HTML... -->
     <script>
-        document.getElementById('formularioProducto').addEventListener('submit', function (e) {
-            e.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
-            console.log("entro al post")
-            // Obtén los valores del formulario
-            var nombre = document.getElementById('nombre').value;
-            var cantidad = document.getElementById('cantidad').value;
-            var precio = document.getElementById('precio').value;
-            var descripcion = document.getElementById('descripcion').value;
+      document
+        .getElementById("formularioProducto")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
+          console.log("entro al post");
+          // Obtén los valores del formulario
+          var nombre = document.getElementById("nombre").value;
+          var cantidad = document.getElementById("cantidad").value;
+          var precio = document.getElementById("precio").value;
+          var descripcion = document.getElementById("descripcion").value;
 
-            // Envía la petición POST
-            console.log(JSON.stringify({
-                nombre: nombre,
-                cantidad: cantidad,
-                precio: precio,
-                descripcion: descripcion
-            }))
-            fetch('/crear_producto/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': '{{ csrf_token }}', // Asegúrate de tener el token CSRF disponible
-                },
-                body: JSON.stringify({
-                    nombre: nombre,
-                    cantidad: cantidad,
-                    precio: precio,
-                    descripcion: descripcion
-                })
+          // Envía la petición POST
+          console.log(
+            JSON.stringify({
+              nombre: nombre,
+              cantidad: cantidad,
+              precio: precio,
+              descripcion: descripcion,
             })
-                .then(response => response.json())
-                .then(data => {
-                    // Procesa la respuesta del servidor si es necesario
-                    console.log(data);
-                    $('#modalProducto').modal('hide'); // Cierra el modal
-                });
+          );
+          fetch("/crear_producto/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de tener el token CSRF disponible
+            },
+            body: JSON.stringify({
+              nombre: nombre,
+              cantidad: cantidad,
+              precio: precio,
+              descripcion: descripcion,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Procesa la respuesta del servidor si es necesario
+              console.log(data);
+              $("#modalProducto").modal("hide"); // Cierra el modal
+            });
         });
     </script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-
+  </body>
 </html>
