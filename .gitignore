@@ -277,3 +277,14 @@ myvenv/bin/django-admin
 myvenv/bin/django-admin.py
 myvenv/bin/pip
 myvenv/bin/sqlformat
+myenv/Scripts/activate
+myenv/Scripts/activate.bat
+myenv/Scripts/Activate.ps1
+myvenv/Scripts/Activate.ps1
+myvenv/Scripts/sqlformat.exe
+myvenv/Scripts/pythonw.exe
+myvenv/Scripts/python.exe
+myvenv/Scripts/pip3.exe
+myvenv/Scripts/pip3.11.exe
+myvenv/Scripts/django-admin.exe
+myvenv/Scripts/deactivate.bat
