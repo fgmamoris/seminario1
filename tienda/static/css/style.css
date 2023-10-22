@@ -21,9 +21,14 @@
     font-size: 36pt;
   }
 }
+body.inicio {
+  background-image: url("../static/img/depositoInicio.jpg");
+  background-size: cover;
+}
+
 /* Estilos generales del navbar */
 .navbar {
-  background-color: white;
+  background-color: rgb(129, 177, 216);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +66,7 @@
 
 .menu a {
   text-decoration: none;
-  color: black;
+  color: rgb(10, 10, 10);
   padding: 5px 10px;
   position: relative;
 }
@@ -74,8 +79,8 @@
 .submenu-content {
   display: none;
   position: absolute;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(63, 108, 158);
+  box-shadow: 0 2px 4px rgba(154, 155, 189, 0.2);
   top: 100%; /* Ajuste para que el submenú aparezca en la misma posición que el menú */
   left: 0; /* Ajuste para que el submenú aparezca a la derecha del menú */
   min-width: 150px; /* Ancho mínimo del submenú */
@@ -103,13 +108,28 @@
 /* Estilos del elemento seleccionado */
 .menu a:hover,
 .menu a.selected {
-  background-color: black;
-  color: white;
+  background-color: rgb(61, 54, 153);
+  color: rgb(0, 0, 0);
 }
 
 /* Nuevos estilos agregados */
+#prueba {
+  background-color: red;
+  display: block;
+}
+.button {
+  background-color: #6b450e;
+  border: none;
+  color: white;
+  padding: 10px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
 .producto {
-  display: flex;
+  display: block;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -126,10 +146,22 @@
 .acciones {
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  margin-top: -200px;
+  float: right;
+  color: rgba(255, 255, 255, 1);
 }
 
 .acciones a {
   margin-right: 10px;
+  background-color: #6b450e !important;
+  border: none;
+  color: white;
+  padding: 10px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }
 .ImnMyf {
   background-color: rgba(255, 255, 255, 1);
@@ -190,9 +222,12 @@
   background-color: rgba(255, 255, 255, 1);
   border-color: rgba(107, 69, 14, 1);
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
+}
+#TEST {
+  background-color: BLUE;
 }
 
 @media only screen and (max-width: 479px) {
@@ -408,7 +443,7 @@
 }
 
 .zfr3Q {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   color: rgba(33, 33, 33, 1);
   font-size: 13pt;
   line-height: 1.6;
@@ -472,7 +507,7 @@
 }
 
 .OmQG5e {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 18pt;
   line-height: 1.3;
   margin-top: 20px;
@@ -536,7 +571,7 @@
 }
 
 .PsKE7e {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 400;
   font-size: 12pt;
   padding-left: 6px;
@@ -581,7 +616,7 @@
 }
 
 .jgXgSe {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 400;
   font-size: 12pt;
   line-height: 1.88;
@@ -609,7 +644,7 @@
 }
 
 .hDrhEe {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   margin-left: 12px;
   margin-right: 12px;
   padding-right: 6px;
@@ -631,7 +666,7 @@
 }
 
 .ySLm4c {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
 }
 
 .CbiMKe {
@@ -642,7 +677,7 @@
   background-color: rgba(107, 69, 14, 1);
   border-color: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -711,7 +746,7 @@
   background-color: rgba(255, 255, 255, 1);
   border-color: rgba(107, 69, 14, 1);
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -894,7 +929,7 @@
   background-color: rgba(255, 255, 255, 1);
   border-color: rgba(107, 69, 14, 1);
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -952,7 +987,7 @@
   background-color: rgba(255, 255, 255, 1);
   border-color: rgba(107, 69, 14, 1);
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -989,7 +1024,7 @@
   background-color: rgba(107, 69, 14, 1);
   border-color: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1028,7 +1063,7 @@
 .xkUom {
   border-color: rgba(107, 69, 14, 1);
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1039,7 +1074,7 @@
 
 .KjwKmc {
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1051,7 +1086,7 @@
 .lQAHbd .xkUom {
   border-color: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1062,13 +1097,17 @@
 
 .lQAHbd .KjwKmc {
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
 
 .lQAHbd .KjwKmc:hover {
   background-color: rgba(255, 255, 255, 0.1000000015);
+}
+
+section[id="h.4a9d518ede350020_0"] .IFuOkc:before {
+  opacity: 0.2;
 }
 
 @media only screen and (max-width: 479px) {
@@ -1102,7 +1141,7 @@
 .cJgDec .xkUom {
   border-color: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1113,7 +1152,7 @@
 
 .cJgDec .KjwKmc {
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1149,7 +1188,7 @@
 .tpmmCb .xkUom {
   border-color: rgba(31, 31, 31, 1);
   color: rgba(31, 31, 31, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1160,7 +1199,7 @@
 
 .tpmmCb .KjwKmc {
   color: rgba(31, 31, 31, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1196,7 +1235,7 @@
 .gk8rDe .xkUom {
   border-color: rgba(107, 69, 14, 1);
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1207,7 +1246,7 @@
 
 .gk8rDe .KjwKmc {
   color: rgba(107, 69, 14, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1243,7 +1282,7 @@
 .O13XJf .xkUom {
   border-color: rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1254,7 +1293,7 @@
 
 .O13XJf .KjwKmc {
   color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
   line-height: 22px;
 }
@@ -1288,7 +1327,7 @@
 }
 
 .Y4CpGd {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 13pt;
 }
 
@@ -1426,8 +1465,4 @@
   .KjwKmc {
     font-size: 13pt;
   }
-}
-
-section[id='h.4a9d518ede350020_0'] .IFuOkc:before {
-  opacity: 0.2;
 }

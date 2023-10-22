@@ -152,27 +152,29 @@
           >
         </div>
       </div>
-      {% for producto in productos %}
-      <link rel="stylesheet" href="{% static '/css/style.css' %}" />
-      <div class="col-md-12 producto">
-        <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
-        <div class="producto-info">
-          <h3>{{ producto.nombre }}</h3>
-          <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
+      <div class="row">
+        {% for producto in productos %}
+        <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+        <div class="col-md-12 producto">
+          <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
+          <div class="producto-info">
+            <h3>{{ producto.nombre }}</h3>
+            <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
+          </div>
+          <div class="acciones">
+            <div class="col-md-4 d-flex justify-content-end align-items-center">
+              <a href="#" id="button">Ver</a>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-items-center">
+              <a href="#" class="button">Modificar</a>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-items-center">
+              <a href="#" class="button">Eliminar</a>
+            </div>
+            <!-- <section id="pr2" class="ch"> -->
+          </div>
+          {% endfor %}
         </div>
-        <div class="acciones">
-          <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <a href="#" id="button">Ver</a>
-          </div>
-          <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <a href="#" class="button">Modificar</a>
-          </div>
-          <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <a href="#" class="button">Eliminar</a>
-          </div>
-          <!-- <section id="pr2" class="ch"> -->
-        </div>
-        {% endfor %}
       </div>
     </div>
 
