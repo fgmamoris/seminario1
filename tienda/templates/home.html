@@ -1,135 +1,393 @@
 <html lang="es" itemscope="" itemtype="http://schema.org/WebPage">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <link rel="icon" href="https://ssl.gstatic.com/atari/images/public/favicon.ico">
-    <meta property="og:title" content="DEPOSIT IA">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="">
-    <meta itemprop="name" content="DEPOSIT IA">
-    <meta itemprop="description" content="">
-
-    <meta itemprop="thumbnailUrl"
-        content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383">
-    <meta itemprop="image"
-        content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383">
-    <meta itemprop="imageUrl"
-        content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383">
-    <meta property="og:image"
-        content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link
-        href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&amp;display=swap"
-        rel="stylesheet" nonce="">
-    <link
-        href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700|Source+Code+Pro:400,700&amp;display=swap"
-        rel="stylesheet" nonce="">
-    <link rel="stylesheet"
-        href="https://www.gstatic.com/_/atari/_/ss/k=atari.vw.tso3sk04PWc.L.W.O/d=1/rs=AGEqA5n0km9tVFwNhSIrs_8xP5a50N9mmw"
-        data-id="_cl" nonce="">
+      rel="icon"
+      href="https://ssl.gstatic.com/atari/images/public/favicon.ico"
+    />
+    <meta property="og:title" content="DEPOSIT IA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    <meta itemprop="name" content="DEPOSIT IA" />
+    <meta itemprop="description" content="" />
 
-    <link rel="stylesheet" href="../static/css/style.css" data-id="_cl" nonce="">
+    <meta
+      itemprop="thumbnailUrl"
+      content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383"
+    />
+    <meta
+      itemprop="image"
+      content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383"
+    />
+    <meta
+      itemprop="imageUrl"
+      content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383"
+    />
+    <meta
+      property="og:image"
+      content="https://lh4.googleusercontent.com/lqzBFLIUHH4nu7gOdPXmqQxLlcTgnb_2sInhSjV50E01RrMnmgQqKtSZ41MKks2yCJ-x-ZyKBd0q87VL01aE0d8=w16383"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&amp;display=swap"
+      rel="stylesheet"
+      nonce=""
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700|Source+Code+Pro:400,700&amp;display=swap"
+      rel="stylesheet"
+      nonce=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.gstatic.com/_/atari/_/ss/k=atari.vw.tso3sk04PWc.L.W.O/d=1/rs=AGEqA5n0km9tVFwNhSIrs_8xP5a50N9mmw"
+      data-id="_cl"
+      nonce=""
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/css/style.css"
+      data-id="_cl"
+      nonce=""
+    />
+
+    <script>
+      function mostrarPopup() {
+        var popup = document.getElementById("popup");
+        popup.classList.add("show-popup");
+      }
+
+      function cerrarPopup() {
+        var popup = document.getElementById("popup");
+        popup.classList.remove("show-popup");
+      }
+    </script>
     <title>DEPOSIT IA</title>
-</head>
+  </head>
 
-<body dir="ltr" itemscope="" itemtype="http://schema.org/WebPage" id="yDmH0d" css="yDmH0d"
-    jsaction="GvneHb:.CLIENT;SK99f:.CLIENT;XxLlob:.CLIENT;c7OXCd:.CLIENT;xO31ue:.CLIENT" class="inicio">
-    <div jscontroller="pc62j" jsmodel="iTeaXe" jsaction="rcuQ6b:WYd;GvneHb:og1FDd;vbaUQc:uAM5ec;">
-        <div jscontroller="X4BaPc"
-            jsaction="rcuQ6b:WYd;o6xM5b:Pg9eo;HuL2Hd:mHeCvf;VMhF5:FFYy5e;sk3Qmb:HI1Mdd;JIbuQc:rSzFEd(z2EeY),aSaF6e(ilzYPe);">
-            <div jscontroller="o1L5Wb" data-sitename="deposit-ia" data-universe="1" jsmodel="fNFZH"
-                jsaction="Pe9H6d:cZFEp;WMZaJ:VsGN3;hJluRd:UADL7b;zuqEgd:HI9w0;tr6QDd:Y8aXB;MxH79b:xDkBfb;JIbuQc:SPXMTb(uxAMZ);"
-                jsname="G0jgYd">
+  <body
+    dir="ltr"
+    itemscope=""
+    itemtype="http://schema.org/WebPage"
+    id="yDmH0d"
+    css="yDmH0d"
+    jsaction="GvneHb:.CLIENT;SK99f:.CLIENT;XxLlob:.CLIENT;c7OXCd:.CLIENT;xO31ue:.CLIENT"
+    class="inicio"
+  >
+    <div
+      jscontroller="pc62j"
+      jsmodel="iTeaXe"
+      jsaction="rcuQ6b:WYd;GvneHb:og1FDd;vbaUQc:uAM5ec;"
+    >
+      <div
+        jscontroller="X4BaPc"
+        jsaction="rcuQ6b:WYd;o6xM5b:Pg9eo;HuL2Hd:mHeCvf;VMhF5:FFYy5e;sk3Qmb:HI1Mdd;JIbuQc:rSzFEd(z2EeY),aSaF6e(ilzYPe);"
+      >
+        <div
+          jscontroller="o1L5Wb"
+          data-sitename="deposit-ia"
+          data-universe="1"
+          jsmodel="fNFZH"
+          jsaction="Pe9H6d:cZFEp;WMZaJ:VsGN3;hJluRd:UADL7b;zuqEgd:HI9w0;tr6QDd:Y8aXB;MxH79b:xDkBfb;JIbuQc:SPXMTb(uxAMZ);"
+          jsname="G0jgYd"
+        >
+          <div class="QZ3zWd">
+            <div
+              class="fktJzd AKpWA vS6Uxe fOU46b yMcSQd Ly6Unf G9Qloe XeSM4 XxIgdb"
+              jsname="UzWXSb"
+              data-uses-custom-theme="false"
+              data-legacy-theme-name="Impression"
+              data-legacy-theme-font-kit="Capital"
+              data-legacy-theme-color-kit="Custom"
+              jscontroller="Md9ENb"
+              jsaction="gsiSmd:Ffcznf;yj5fUd:cpPetb;HNXL3:q0Vyke;e2SXKd:IPDu5e;BdXpgd:nhk7K;rcuQ6b:WYd;"
+            >
+              <header>
+                <div>
+                  <nav class="navbar">
+                    <div class="left">
+                      <img
+                        src="../static/img/logo-depositia.jpg"
+                        alt="Logo"
+                        class="logo"
+                      />
+                      <span>DEPOSIT IA</span>
+                    </div>
+                    <ul class="menu">
+                      <li><a href="#">Inicio</a></li>
+                      <li><a href="#">Nosotros</a></li>
+                      <li class="submenu">
+                        <a href="#">Stock</a>
+                        <div class="submenu-content">
+                          <ul>
+                            <li>
+                              <a
+                                data-toggle="modal"
+                                data-target="#modalProducto"
+                                >Crear Producto</a
+                              >
+                            </li>
+                            <li>
+                              <a href="{% url 'lista_productos' %}"
+                                >Productos</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="submenu">
+                        <a href="#">Logistica</a>
+                        <div class="submenu-content">
+                          <ul>
+                            <li><a href="#">Transportistas</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="submenu">
+                        <a href="">Pedidos</a>
+                        <div class="submenu-content">
+                          <ul>
+                            <li><a href="">Nuevo pedido</a></li>
+                            <li><a href="">Pedidos</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><a href="#">Crear Cuenta</a></li>
+                      <li><a href="#">Ingresar</a></li>
+                    </ul>
+                  </nav>
+                </div>
 
-                <div class="QZ3zWd">
-                    <div class="fktJzd AKpWA vS6Uxe fOU46b yMcSQd Ly6Unf G9Qloe XeSM4 XxIgdb" jsname="UzWXSb"
-                        data-uses-custom-theme="false" data-legacy-theme-name="Impression"
-                        data-legacy-theme-font-kit="Capital" data-legacy-theme-color-kit="Custom" jscontroller="Md9ENb"
-                        jsaction="gsiSmd:Ffcznf;yj5fUd:cpPetb;HNXL3:q0Vyke;e2SXKd:IPDu5e;BdXpgd:nhk7K;rcuQ6b:WYd;">
-                        <header>
-                            <div>
-                                <nav class="navbar">
-                                    <div class="left">
-                                        <img src="../static/img/logo-depositia.jpg" alt="Logo" class="logo">
-                                        <span>DEPOSIT IA</span>
-                                    </div>
-                                    <ul class="menu">
-                                        <li><a href="#">Inicio</a></li>
-                                        <li><a href="#">Nosotros</a></li>
-                                        <li class="submenu">
-                                            <a href="#">Stock</a>
-                                            <div class="submenu-content">
-                                                <ul>
-                                                    <li><a data-toggle="modal" data-target="#modalProducto">Crear Producto</a></li>
-                                                    <li><a href="{% url 'lista_productos' %}">Productos</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="submenu">
-                                            <a href="#">Logistica</a>
-                                            <div class="submenu-content">
-                                                <ul>
-                                                    <li><a href="#">Transportistas</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="submenu">
-                                            <a href="">Pedidos</a>
-                                            <div class="submenu-content">
-                                                <ul>
-                                                    <li><a href="">Nuevo pedido</a></li>
-                                                    <li><a href="">Pedidos</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li><a href="#">Crear Cuenta</a></li>
-                                        <li><a href="#">Ingresar</a></li>
-                                    </ul>
-                                </nav>
+                <div id="popup" class="popup">
+                  <div class="swal2-popup swal2-show" style="display: flex">
+                    <div class="swal2-header">
+                      <ul
+                        class="swal2-progresssteps"
+                        style="display: none"
+                      ></ul>
+                      <div
+                        class="swal2-icon swal2-success swal2-icon-show"
+                        style="display: none"
+                      >
+                        <div
+                          class="swal2-success-circular-line-left"
+                          style="background-color: rgb(255, 255, 255)"
+                        ></div>
+                        <span class="swal2-success-line-tip"></span>
+                        <span class="swal2-success-line-long"></span>
+                        <div class="swal2-success-ring"></div>
+                        <div
+                          class="swal2-success-fix"
+                          style="background-color: rgb(255, 255, 255)"
+                        ></div>
+                        <div
+                          class="swal2-success-circular-line-right"
+                          style="background-color: rgb(255, 255, 255)"
+                        ></div>
+                      </div>
+                      <img
+                        src="https://sweetalert2.github.io/images/thumbs-up.jpg"
+                        class="swal2-image"
+                        style="display: none"
+                      />
+                      <h2
+                        class="swal2-title"
+                        id="swal2-title"
+                        style="display: flex"
+                      >
+                        Producto creado exitosamente
+                      </h2>
+                    </div>
+                    <div class="swal2-actions">
+                      <button
+                        type="button"
+                        class="swal2-confirm swal2-styled"
+                        aria-label=""
+                        style="display: inline-block"
+                        onclick="cerrarPopup()"
+                      >
+                        Cerrar
+                      </button>
+                    </div>
+                    <div class="swal2-footer" style="display: none"></div>
+                    <input
+                      type="radio"
+                      class="swal2-radio swal2-hide"
+                      style="display: none"
+                    />
+                  </div>
+                </div>
+                <form id="formularioProducto">
+                  {% csrf_token %}
+                  <div
+                    class="modal fade"
+                    id="modalProducto"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Formulario de Producto
+                          </h5>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Agrega tu formulario aquí -->
+                          <div class="form-group">
+                            <label for="nombre">Nombre del Producto</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="nombre"
+                              placeholder="Nombre del Producto"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="cantidad">Cantidad</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="cantidad"
+                              placeholder="Cantidad"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="precio">Precio</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="precio"
+                              placeholder="Precio"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea
+                              class="form-control"
+                              id="descripcion"
+                              rows="3"
+                              placeholder="Descripción"
+                              required
+                            ></textarea>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                          >
+                            Cerrar
+                          </button>
+                          <button type="submit" class="btn btn-primary">
+                            Crear
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </header>
+              <div
+                role="main"
+                tabindex="-1"
+                class="UtePc RCETm"
+                dir="ltr"
+                aria-hidden="false"
+              >
+                <section
+                  id="h.4a9d518ede350020_0"
+                  class="yaqOZd LB7kq cJgDec nyKByd O13XJf SBrW1"
+                >
+                  <div class="Nu95r">
+                    <div
+                      class="IFuOkc"
+                      style="
+                        background-position: center center;
+                        background-image: url('https://lh4.googleusercontent.com/i4183LiKrOC44kbCS3G8wcfCSOYrR27_lkdNuGvVxC-GTgkWkr2NME_NqyhwRi5ZJUxmULyXGOC_jVv6B10BBIs=w16383');
+                        background-size: cover;
+                        transform: translate3d(0px, 0px, 0px);
+                      "
+                      jsname="LQX2Vd"
+                    ></div>
+                  </div>
+                  <div class="mYVXT">
+                    <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
+                      <div
+                        class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc"
+                      >
+                        <div class="JNdkSc-SmKAyb LkDMRd">
+                          <div
+                            class=""
+                            jscontroller="sGwD4d"
+                            jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;"
+                            jsname="F57UId"
+                          >
+                            <div class="oKdM2c ZZyype Kzv0Me">
+                              <div
+                                id="h.3362346e3d12c940_0"
+                                class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"
+                              >
+                                <div class="jXK9ad-SmKAyb">
+                                  <div class="tyJCtd mGzaTb Depvyb baZpAe">
+                                    <h2
+                                      id="h.j703uw7a06p3"
+                                      dir="ltr"
+                                      class="zfr3Q JYVBee CDt4Ke"
+                                      style="text-align: center"
+                                    >
+                                      <span
+                                        class="CGqCRe C9DxTc"
+                                        style="vertical-align: baseline"
+                                        >DEPOSIT </span
+                                      ><span
+                                        class="CGqCRe C9DxTc"
+                                        style="
+                                          color: #4a86e8;
+                                          font-family: Oswald, Arial;
+                                          font-weight: 700;
+                                          vertical-align: baseline;
+                                        "
+                                        >i</span
+                                      ><span
+                                        class="CGqCRe C9DxTc"
+                                        style="
+                                          color: #4a86e8;
+                                          font-family: Oswald, Arial;
+                                          font-weight: 700;
+                                          vertical-align: baseline;
+                                        "
+                                        >a</span
+                                      >
+                                    </h2>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                        </header>
-                        <div role="main" tabindex="-1" class="UtePc RCETm" dir="ltr" aria-hidden="false">
-                            <section id="h.4a9d518ede350020_0" class="yaqOZd LB7kq cJgDec nyKByd O13XJf SBrW1" style="">
-                                <div class="Nu95r">
-                                    <div class="IFuOkc"
-                                        style="background-position: center center; background-image: url(&quot;https://lh4.googleusercontent.com/i4183LiKrOC44kbCS3G8wcfCSOYrR27_lkdNuGvVxC-GTgkWkr2NME_NqyhwRi5ZJUxmULyXGOC_jVv6B10BBIs=w16383&quot;); background-size: cover; transform: translate3d(0px, 0px, 0px);"
-                                        jsname="LQX2Vd"></div>
-                                </div>
-                                <div class="mYVXT">
-                                    <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
-                                        <div
-                                            class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc">
-                                            <div class="JNdkSc-SmKAyb LkDMRd">
-                                                <div class="" jscontroller="sGwD4d"
-                                                    jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId">
-                                                    <div class="oKdM2c ZZyype Kzv0Me">
-                                                        <div id="h.3362346e3d12c940_0"
-                                                            class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb">
-                                                            <div class="jXK9ad-SmKAyb">
-                                                                <div class="tyJCtd mGzaTb Depvyb baZpAe">
-                                                                    <h2 id="h.j703uw7a06p3" dir="ltr"
-                                                                        class="zfr3Q JYVBee CDt4Ke "
-                                                                        style="text-align: center;"><span
-                                                                            class="CGqCRe C9DxTc "
-                                                                            style="vertical-align: baseline;">DEPOSIT
-                                                                        </span><span class="CGqCRe C9DxTc "
-                                                                            style="color: #4a86e8; font-family: Oswald, Arial; font-weight: 700; vertical-align: baseline;">i</span><span
-                                                                            class="CGqCRe C9DxTc "
-                                                                            style="color: #4a86e8; font-family: Oswald, Arial; font-weight: 700; vertical-align: baseline;">a</span>
-                                                                    </h2>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section id="h.3362346e3d12c940_70" class="yaqOZd lQAHbd">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!-- <section id="h.3362346e3d12c940_70" class="yaqOZd lQAHbd">
                                 <div class="IFuOkc"></div>
                                 <div class="mYVXT">
                                     <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
@@ -162,104 +420,227 @@
                                         </div>
                                     </div>
                                 </div>
-                            </section>
-                        </div>
-                        <div class="Xpil1b xgQ6eb"></div>
-                        <footer jsname="yePe5c" aria-hidden="false">
-                            <section id="h.12fce10e77be29fa_28" class="yaqOZd lQAHbd">
-                                <div class="IFuOkc"></div>
-                                <div class="mYVXT">
-                                    <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
-                                        <div
-                                            class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc">
-                                            <div class="JNdkSc-SmKAyb LkDMRd">
-                                                <div class="" jscontroller="sGwD4d"
-                                                    jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId">
-                                                    <div class="oKdM2c ZZyype Kzv0Me">
-                                                        <div id="h.12fce10e77be29fa_25"
-                                                            class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb">
-                                                            <div class="jXK9ad-SmKAyb">
-                                                                <div class="tyJCtd mGzaTb Depvyb baZpAe">
-                                                                    <p dir="ltr" class="zfr3Q CDt4Ke "
-                                                                        style="text-align: center;">
-                                                                        <span class="C9DxTc " style="">Nuestras redes
-                                                                            sociales:</span>
-                                                                    </p><br>
-                                                                    <p dir="ltr" class="zfr3Q CDt4Ke "
-                                                                        style="text-align: left;">
-                                                                        <span class="C9DxTc "
-                                                                            style="font-size: 8.0pt; vertical-align: baseline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Todos
-                                                                            los derechos reservados</span>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-II5mzb Ktthjf-AhqUyc-II5mzb JNdkSc SQVYQc">
-                                            <div class="JNdkSc-SmKAyb LkDMRd">
-                                                <div class="" jscontroller="sGwD4d"
-                                                    jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId">
-                                                    <div class="oKdM2c ZZyype Kzv0Me">
-                                                        <div id="h.7d3cb9aa5f18cdb2_152"
-                                                            class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb">
-                                                            <div class="jXK9ad-SmKAyb">
-                                                                <div class="tyJCtd baZpAe">
-                                                                    <div class="i2gjFc Mi644 j2p0Pb zjopje"><a
-                                                                            href="https://workspace.google.com/intl/es-419/products/gmail/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-AR-all-es-dr-bkws-all-all-trial-e-dr-1605540-LUAC0011865&amp;utm_content=text-ad-none-any-DEV_c-CRE_471087538708-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20Gmail-KWID_43700057701729742-kwd-329871267&amp;utm_term=KW_gmail-ST_gmail&amp;gad=1&amp;gclid=CjwKCAjwv8qkBhAnEiwAkY-ahqgiPJ1EZqHXWmMij_8UPdzNUuuXX279uV6D_JN39e-Y49vrjjD65BoCeyAQAvD_BwE&amp;gclsrc=aw.ds"
-                                                                            target="_blank" class="RNpQXe AIKCSc"
-                                                                            style="width: 32px; height: 32px; margin: 6px; background-color: rgb(95, 99, 104); background-image: linear-gradient(rgb(95, 99, 104), rgb(95, 99, 104));"><img
-                                                                                src="https://ssl.gstatic.com/atari/images/sociallinks/link_white_28dp.png"
-                                                                                alt="Enlace" class="lEB4Hf"
-                                                                                style="width: 28px; height: 28px;"
-                                                                                width="28" height="28"></a><a
-                                                                            href="https://www.youtube.com/"
-                                                                            target="_blank" class="RNpQXe AIKCSc"
-                                                                            style="width: 32px; height: 32px; margin: 6px; background-color: rgb(95, 99, 104); background-image: linear-gradient(rgb(95, 99, 104), rgb(95, 99, 104));"><img
-                                                                                src="https://ssl.gstatic.com/atari/images/sociallinks/youtube_white_28dp.png"
-                                                                                alt="YouTube" class="lEB4Hf"
-                                                                                style="width: 28px; height: 28px;"
-                                                                                width="28" height="28"></a><a
-                                                                            href="https://www.google.com/url?q=https%3A%2F%2Fes-la.facebook.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw296EQLSATRVrp3qqft_Cex"
-                                                                            target="_blank" class="RNpQXe AIKCSc"
-                                                                            style="width: 32px; height: 32px; margin: 6px; background-color: rgb(95, 99, 104); background-image: linear-gradient(rgb(95, 99, 104), rgb(95, 99, 104));"><img
-                                                                                src="https://ssl.gstatic.com/atari/images/sociallinks/facebook_white_28dp.png"
-                                                                                alt="Facebook" class="lEB4Hf"
-                                                                                style="width: 28px; height: 28px;"
-                                                                                width="28" height="28"></a></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb JNdkSc SQVYQc L6cTce-purZT L6cTce-pSzOP">
-                                            <div class="JNdkSc-SmKAyb LkDMRd">
-                                                <div class="" jscontroller="sGwD4d"
-                                                    jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </section> -->
+              </div>
+              <div class="Xpil1b xgQ6eb"></div>
+              <footer jsname="yePe5c" aria-hidden="false">
+                <section id="h.12fce10e77be29fa_28" class="yaqOZd lQAHbd">
+                  <div class="IFuOkc"></div>
+                  <div class="mYVXT">
+                    <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
+                      <div
+                        class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc"
+                      >
+                        <div class="JNdkSc-SmKAyb LkDMRd">
+                          <div
+                            class=""
+                            jscontroller="sGwD4d"
+                            jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;"
+                            jsname="F57UId"
+                          >
+                            <div class="oKdM2c ZZyype Kzv0Me">
+                              <div
+                                id="h.12fce10e77be29fa_25"
+                                class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"
+                              >
+                                <div class="jXK9ad-SmKAyb">
+                                  <div class="tyJCtd mGzaTb Depvyb baZpAe">
+                                    <p
+                                      dir="ltr"
+                                      class="zfr3Q CDt4Ke"
+                                      style="text-align: center"
+                                    >
+                                      <span class="C9DxTc" style=""
+                                        >Nuestras redes sociales:</span
+                                      >
+                                    </p>
+                                    <br />
+                                    <p
+                                      dir="ltr"
+                                      class="zfr3Q CDt4Ke"
+                                      style="text-align: left"
+                                    >
+                                      <span
+                                        class="C9DxTc"
+                                        style="
+                                          font-size: 8pt;
+                                          vertical-align: baseline;
+                                        "
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Todos
+                                        los derechos reservados</span
+                                      >
+                                    </p>
+                                  </div>
                                 </div>
-                            </section>
-                        </footer>
-
-
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-II5mzb Ktthjf-AhqUyc-II5mzb JNdkSc SQVYQc"
+                      >
+                        <div class="JNdkSc-SmKAyb LkDMRd">
+                          <div
+                            class=""
+                            jscontroller="sGwD4d"
+                            jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;"
+                            jsname="F57UId"
+                          >
+                            <div class="oKdM2c ZZyype Kzv0Me">
+                              <div
+                                id="h.7d3cb9aa5f18cdb2_152"
+                                class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"
+                              >
+                                <div class="jXK9ad-SmKAyb">
+                                  <div class="tyJCtd baZpAe">
+                                    <div class="i2gjFc Mi644 j2p0Pb zjopje">
+                                      <a
+                                        href="https://workspace.google.com/intl/es-419/products/gmail/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=latam-AR-all-es-dr-bkws-all-all-trial-e-dr-1605540-LUAC0011865&amp;utm_content=text-ad-none-any-DEV_c-CRE_471087538708-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20Gmail-KWID_43700057701729742-kwd-329871267&amp;utm_term=KW_gmail-ST_gmail&amp;gad=1&amp;gclid=CjwKCAjwv8qkBhAnEiwAkY-ahqgiPJ1EZqHXWmMij_8UPdzNUuuXX279uV6D_JN39e-Y49vrjjD65BoCeyAQAvD_BwE&amp;gclsrc=aw.ds"
+                                        target="_blank"
+                                        class="RNpQXe AIKCSc"
+                                        style="
+                                          width: 32px;
+                                          height: 32px;
+                                          margin: 6px;
+                                          background-color: rgb(95, 99, 104);
+                                          background-image: linear-gradient(
+                                            rgb(95, 99, 104),
+                                            rgb(95, 99, 104)
+                                          );
+                                        "
+                                        ><img
+                                          src="https://ssl.gstatic.com/atari/images/sociallinks/link_white_28dp.png"
+                                          alt="Enlace"
+                                          class="lEB4Hf"
+                                          style="width: 28px; height: 28px"
+                                          width="28"
+                                          height="28" /></a
+                                      ><a
+                                        href="https://www.youtube.com/"
+                                        target="_blank"
+                                        class="RNpQXe AIKCSc"
+                                        style="
+                                          width: 32px;
+                                          height: 32px;
+                                          margin: 6px;
+                                          background-color: rgb(95, 99, 104);
+                                          background-image: linear-gradient(
+                                            rgb(95, 99, 104),
+                                            rgb(95, 99, 104)
+                                          );
+                                        "
+                                        ><img
+                                          src="https://ssl.gstatic.com/atari/images/sociallinks/youtube_white_28dp.png"
+                                          alt="YouTube"
+                                          class="lEB4Hf"
+                                          style="width: 28px; height: 28px"
+                                          width="28"
+                                          height="28" /></a
+                                      ><a
+                                        href="https://www.google.com/url?q=https%3A%2F%2Fes-la.facebook.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw296EQLSATRVrp3qqft_Cex"
+                                        target="_blank"
+                                        class="RNpQXe AIKCSc"
+                                        style="
+                                          width: 32px;
+                                          height: 32px;
+                                          margin: 6px;
+                                          background-color: rgb(95, 99, 104);
+                                          background-image: linear-gradient(
+                                            rgb(95, 99, 104),
+                                            rgb(95, 99, 104)
+                                          );
+                                        "
+                                        ><img
+                                          src="https://ssl.gstatic.com/atari/images/sociallinks/facebook_white_28dp.png"
+                                          alt="Facebook"
+                                          class="lEB4Hf"
+                                          style="width: 28px; height: 28px"
+                                          width="28"
+                                          height="28"
+                                      /></a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="hJDwNd-AhqUyc-II5mzb Ft7HRd-AhqUyc-II5mzb JNdkSc SQVYQc L6cTce-purZT L6cTce-pSzOP"
+                      >
+                        <div class="JNdkSc-SmKAyb LkDMRd">
+                          <div
+                            class=""
+                            jscontroller="sGwD4d"
+                            jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;"
+                            jsname="F57UId"
+                          ></div>
+                        </div>
+                      </div>
                     </div>
-
-                </div>
+                  </div>
+                </section>
+              </footer>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    </div>
-    </div>
-</body>
+    <script>
+      document
+        .getElementById("formularioProducto")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
+          var nombre = document.getElementById("nombre").value;
+          var cantidad = document.getElementById("cantidad").value;
+          var precio = document.getElementById("precio").value;
+          var descripcion = document.getElementById("descripcion").value;
 
+          // Envía la petición POST
+          console.log(
+            JSON.stringify({
+              nombre: nombre,
+              cantidad: cantidad,
+              precio: precio,
+              descripcion: descripcion,
+            })
+          );
+          fetch("/crear_producto/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de tener el token CSRF disponible
+            },
+            body: JSON.stringify({
+              nombre: nombre,
+              cantidad: cantidad,
+              precio: precio,
+              descripcion: descripcion,
+            }),
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              if (data.message === "Producto creado exitosamente.") {
+                mostrarPopup();
+                setTimeout(() => {
+                  location.reload(); // Recarga la página después de 3 segundos
+                }, 3000);
+              }
+              $("#modalProducto").modal("hide"); // Cierra el modal
+            });
+        });
+    </script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
