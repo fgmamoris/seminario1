@@ -22,7 +22,7 @@
   }
 }
 body.inicio {
-  background-image: url("../static/img/depositoInicio.jpg");
+  background-image: url("../img/depositoInicio.jpg");
   background-size: cover;
 }
 
