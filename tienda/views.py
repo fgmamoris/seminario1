@@ -20,7 +20,7 @@ def crear_producto(request):
             form = ProductoForm(data)
             if form.is_valid():
                 form.save()
-                return JsonResponse({'message': 'Producto creado exitosamente.'})
+                return JsonResponse({'message': 'Producto creado exitosamente.'}, status=200)
             else:
                 return JsonResponse({'message': 'Error al crear el producto.'}, status=400)
         except Exception as e:
