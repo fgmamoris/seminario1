@@ -1,215 +1,289 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Lista de Productos</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script>
+      function mostrarPopup() {
+        var popup = document.getElementById("popup");
+        popup.classList.add("show-popup");
+      }
 
-<head>
-  {% load static %}
-  <meta charset="UTF-8" />
-  <title>Lista de Productos</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <script>
-    function mostrarPopup() {
-      var popup = document.getElementById('popup');
-      popup.classList.add('show-popup');
-    }
+      function cerrarPopup() {
+        var popup = document.getElementById("popup");
+        popup.classList.remove("show-popup");
+      }
+    </script>
+  </head>
 
-    function cerrarPopup() {
-      var popup = document.getElementById('popup');
-      popup.classList.remove('show-popup');
-    }</script>
-</head>
-
-<body>
-  <div>
-    <nav class="navbar">
-      <div class="left">
-        <img src="../static/img/logo-depositia.jpg" alt="Logo" class="logo" />
-        <span>DEPOSIT IA</span>
-      </div>
-      <ul class="menu">
-        <li><a href="">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li class="submenu">
-          <a href="#">Stock</a>
-          <div class="submenu-content">
-            <ul>
-              <li>
-                <a data-toggle="modal" data-target="#modalProducto">Crear Producto</a>
-              </li>
-              <li><a href="{% url 'lista_productos' %}">Productos</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="submenu">
-          <a href="#">Logistica</a>
-          <div class="submenu-content">
-            <ul>
-              <li><a href="#">Transportistas</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="submenu">
-          <a href="">Pedidos</a>
-          <div class="submenu-content">
-            <ul>
-              <li><a href="">Nuevo pedido</a></li>
-              <li><a href="">Pedidos</a></li>
-            </ul>
-          </div>
-        </li>
-        <li><a href="#">Crear Cuenta</a></li>
-        <li><a href="#">Ingresar</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div id="popup" class="popup">
-    <div class="swal2-popup swal2-show" style="display: flex;">
-      <div class="swal2-header">
-        <ul class="swal2-progresssteps" style="display: none;"></ul>
-        <div class="swal2-icon swal2-success swal2-icon-show" style="display: none;">
-          <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
-          <span class="swal2-success-line-tip"></span>
-          <span class="swal2-success-line-long"></span>
-          <div class="swal2-success-ring"></div>
-          <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
-          <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+  <body>
+    <div>
+      <nav class="navbar">
+        <div class="left">
+          <img src="../static/img/logo-depositia.jpg" alt="Logo" class="logo" />
+          <span>DEPOSIT IA</span>
         </div>
-        <img src="https://sweetalert2.github.io/images/thumbs-up.jpg" class="swal2-image" style="display: none;">
-        <h2 class="swal2-title" id="swal2-title" style="display: flex;">Producto creado exitosamente</h2>
-      </div>
-      <div class="swal2-actions">
-        <button type="button" class="swal2-confirm swal2-styled" aria-label="" style="display: inline-block;"
-          onclick="cerrarPopup()">Cerrar</button>
-      </div>
-      <div class="swal2-footer" style="display: none;"></div>
-      <input type="radio" class="swal2-radio swal2-hide" style="display: none;">
+        <ul class="menu">
+          <li><a href="">Inicio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li class="submenu">
+            <a href="#">Stock</a>
+            <div class="submenu-content">
+              <ul>
+                <li>
+                  <a data-toggle="modal" data-target="#modalProducto"
+                    >Crear Producto</a
+                  >
+                </li>
+                <li><a href="{% url 'lista_productos' %}">Productos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="submenu">
+            <a href="#">Logistica</a>
+            <div class="submenu-content">
+              <ul>
+                <li><a href="#">Transportistas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="submenu">
+            <a href="">Pedidos</a>
+            <div class="submenu-content">
+              <ul>
+                <li><a href="">Nuevo pedido</a></li>
+                <li><a href="">Pedidos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Crear Cuenta</a></li>
+          <li><a href="#">Ingresar</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-  <form id="formularioProducto">
-    {% csrf_token %}
-    <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Formulario de Producto
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+    <div id="popup" class="popup">
+      <div class="swal2-popup swal2-show" style="display: flex">
+        <div class="swal2-header">
+          <ul class="swal2-progresssteps" style="display: none"></ul>
+          <div
+            class="swal2-icon swal2-success swal2-icon-show"
+            style="display: none"
+          >
+            <div
+              class="swal2-success-circular-line-left"
+              style="background-color: rgb(255, 255, 255)"
+            ></div>
+            <span class="swal2-success-line-tip"></span>
+            <span class="swal2-success-line-long"></span>
+            <div class="swal2-success-ring"></div>
+            <div
+              class="swal2-success-fix"
+              style="background-color: rgb(255, 255, 255)"
+            ></div>
+            <div
+              class="swal2-success-circular-line-right"
+              style="background-color: rgb(255, 255, 255)"
+            ></div>
           </div>
-          <div class="modal-body">
-            <!-- Agrega tu formulario aquí -->
-            <div class="form-group">
-              <label for="nombre">Nombre del Producto</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre del Producto" required />
-            </div>
-            <div class="form-group">
-              <label for="cantidad">Cantidad</label>
-              <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" required />
-            </div>
-            <div class="form-group">
-              <label for="precio">Precio</label>
-              <input type="number" class="form-control" id="precio" placeholder="Precio" required />
-            </div>
-            <div class="form-group">
-              <label for="descripcion">Descripción</label>
-              <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción" required></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Cerrar
-            </button>
-            <button type="submit" class="btn btn-primary">Crear</button>
-          </div>
+          <img
+            src="https://sweetalert2.github.io/images/thumbs-up.jpg"
+            class="swal2-image"
+            style="display: none"
+          />
+          <h2 class="swal2-title" id="swal2-title" style="display: flex">
+            Producto creado exitosamente
+          </h2>
         </div>
+        <div class="swal2-actions">
+          <button
+            type="button"
+            class="swal2-confirm swal2-styled"
+            aria-label=""
+            style="display: inline-block"
+            onclick="cerrarPopup()"
+          >
+            Cerrar
+          </button>
+        </div>
+        <div class="swal2-footer" style="display: none"></div>
+        <input
+          type="radio"
+          class="swal2-radio swal2-hide"
+          style="display: none"
+        />
       </div>
     </div>
-  </form>
-  <div class="container mt-4">
-    <div class="col-md-8 d-flex align-items-center">
-      <h1>Productos</h1>
-    </div>
-    <div class="row">
-      {% for producto in productos %}
-      <link rel="stylesheet" href="{% static '/css/style.css' %}" />
-      <div class="col-md-12 producto">
-        <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
-        <div class="producto-info mt-4">
-          <h3>{{ producto.nombre }}</h3>
-          <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
+    <form id="formularioProducto">
+      {% csrf_token %}
+      <div
+        class="modal fade"
+        id="modalProducto"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Formulario de Producto
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Agrega tu formulario aquí -->
+              <div class="form-group">
+                <label for="nombre">Nombre del Producto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Nombre del Producto"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cantidad"
+                  placeholder="Cantidad"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="precio">Precio</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="precio"
+                  placeholder="Precio"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  class="form-control"
+                  id="descripcion"
+                  rows="3"
+                  placeholder="Descripción"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+          </div>
         </div>
-        <div class="acciones">
-          <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <a href="#" id="button">Ver</a>
+      </div>
+    </form>
+    <div class="container mt-4">
+      <div class="col-md-8 d-flex align-items-center">
+        <h1>Productos</h1>
+      </div>
+      <div class="row">
+        {% for producto in productos %}
+        <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+        <div class="col-md-12 producto">
+          <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
+          <div class="producto-info mt-4">
+            <h3>{{ producto.nombre }}</h3>
+            <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
           </div>
-          <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <a href="#" class="button">Modificar</a>
+          <div class="acciones">
+            <div class="col-md-4 d-flex justify-content-end align-items-center">
+              <a href="#" id="button">Ver</a>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-items-center">
+              <a href="#" class="button">Modificar</a>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end align-items-center">
+              <a href="#" class="button">Eliminar</a>
+            </div>
+            <!-- <section id="pr2" class="ch"> -->
           </div>
-          <div class="col-md-4 d-flex justify-content-end align-items-center">
-            <a href="#" class="button">Eliminar</a>
-          </div>
-          <!-- <section id="pr2" class="ch"> -->
         </div>
         {% endfor %}
       </div>
     </div>
-  </div>
 
-  <!-- Resto de tu código HTML... -->
-  <script>
-    document
-      .getElementById("formularioProducto")
-      .addEventListener("submit", function (e) {
-        e.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
-        var nombre = document.getElementById("nombre").value;
-        var cantidad = document.getElementById("cantidad").value;
-        var precio = document.getElementById("precio").value;
-        var descripcion = document.getElementById("descripcion").value;
+    <!-- Resto de tu código HTML... -->
+    <script>
+      document
+        .getElementById("formularioProducto")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
+          var nombre = document.getElementById("nombre").value;
+          var cantidad = document.getElementById("cantidad").value;
+          var precio = document.getElementById("precio").value;
+          var descripcion = document.getElementById("descripcion").value;
 
-        // Envía la petición POST
-        console.log(
-          JSON.stringify({
-            nombre: nombre,
-            cantidad: cantidad,
-            precio: precio,
-            descripcion: descripcion,
+          // Envía la petición POST
+          console.log(
+            JSON.stringify({
+              nombre: nombre,
+              cantidad: cantidad,
+              precio: precio,
+              descripcion: descripcion,
+            })
+          );
+          fetch("/crear_producto/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de tener el token CSRF disponible
+            },
+            body: JSON.stringify({
+              nombre: nombre,
+              cantidad: cantidad,
+              precio: precio,
+              descripcion: descripcion,
+            }),
           })
-        );
-        fetch("/crear_producto/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de tener el token CSRF disponible
-          },
-          body: JSON.stringify({
-            nombre: nombre,
-            cantidad: cantidad,
-            precio: precio,
-            descripcion: descripcion,
-          }),
-        })
-          .then(response => {
-            return response.json();
-          })
-          .then(data => {
-            if (data.message === "Producto creado exitosamente.") {
-              mostrarPopup();
-              setTimeout(() => {
-                location.reload(); // Recarga la página después de 3 segundos
-              }, 3000);
-            }
-            $('#modalProducto').modal('hide'); // Cierra el modal
-
-          });
-      });
-  </script>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              if (data.message === "Producto creado exitosamente.") {
+                mostrarPopup();
+                setTimeout(() => {
+                  location.reload(); // Recarga la página después de 3 segundos
+                }, 3000);
+              }
+              $("#modalProducto").modal("hide"); // Cierra el modal
+            });
+        });
+    </script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
