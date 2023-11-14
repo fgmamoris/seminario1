@@ -222,7 +222,15 @@
               <a href="#" class="button">Modificar</a>
             </div>
             <div class="col-md-4 d-flex justify-content-end align-items-center">
-              <a href="#" class="button">Eliminar</a>
+              <!-- <a href="#" class="button">Eliminar</a> -->
+              <form
+                action="{% url 'eliminar_producto' producto.id %}"
+                method="post"
+                style="display: inline"
+              >
+                {% csrf_token %}
+                <input class="button" type="submit" value="Eliminar" />
+              </form>
             </div>
             <!-- <section id="pr2" class="ch"> -->
           </div>

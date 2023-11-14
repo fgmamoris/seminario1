@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from .models import Producto
 from .forms import ProductoForm
 from django.http import JsonResponse
+from django.shortcuts import redirect, get_object_or_404
 import json
 
 def post_list(request):
@@ -44,3 +45,8 @@ class ListaProductosView(TemplateView):
 
 class CrearProductoView(TemplateView):
     template_name = 'crear_producto.html'  
+
+def eliminar_producto(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id)
+    producto.delete()
+    return redirect('lista_productos')
