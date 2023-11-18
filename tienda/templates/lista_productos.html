@@ -201,6 +201,90 @@
         </div>
       </div>
     </form>
+    <form id="formularioProductoEdit">
+      {% csrf_token %}
+      <div
+        class="modal fade"
+        id="modalEditProducto"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Editar Producto
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Agrega tu formulario aquí -->
+              <div class="form-group">
+                <label for="nombre">Nombre del Producto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre-edit"
+                  placeholder="Nombre del Producto"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cantidad-edit"
+                  placeholder="Cantidad"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="precio">Precio</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="precio-edit"
+                  placeholder="Precio"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea
+                  class="form-control"
+                  id="descripcion-edit"
+                  rows="3"
+                  placeholder="Descripción"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="submit" class="btn btn-primary edit-button">
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
     <div class="container mt-4">
       <div class="col-md-8 d-flex align-items-center">
         <h1>Productos</h1>
@@ -212,14 +296,22 @@
           <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
           <div class="producto-info mt-4">
             <h3>{{ producto.nombre }}</h3>
-            <p>SKU: {{ producto.sku }} - Cantidad: {{ producto.cantidad }}</p>
+            <p>SKU: {{ producto.id }} - Cantidad: {{ producto.cantidad }}</p>
           </div>
           <div class="acciones">
             <div class="col-md-4 d-flex justify-content-end align-items-center">
               <a href="#" id="button">Ver</a>
             </div>
             <div class="col-md-4 d-flex justify-content-end align-items-center">
-              <a href="#" class="button">Modificar</a>
+              <a
+                class="button"
+                data-toggle="modal"
+                data-target="#modalEditProducto"
+                data-id="{{ producto.id }}"
+                data-product-id="{{ producto.id }}"
+                >Modificar</a
+              >
+              {% csrf_token %}
             </div>
             <div class="col-md-4 d-flex justify-content-end align-items-center">
               <!-- <a href="#" class="button">Eliminar</a> -->
@@ -285,6 +377,85 @@
               $("#modalProducto").modal("hide"); // Cierra el modal
             });
         });
+      document.addEventListener("DOMContentLoaded", function () {
+        var editButtons = document.querySelectorAll(".edit-button");
+
+        editButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var productId = this.getAttribute("data-product-id");
+            var modal = document.getElementById("modalEditProducto");
+            var form = document.getElementById("formularioProductoEdit");
+
+            if (form && productId) {
+              form.dataset.productId = productId;
+              form.action = "{% url 'modificar_producto' 0 %}".replace(
+                "0",
+                productId
+              );
+
+              fetch("{% url 'obtener_producto' 0 %}".replace("0", productId))
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error("Error al obtener los datos del producto");
+                  }
+                  return response.json();
+                })
+                .then((data) => {
+                  document.getElementById("nombre-edit").value = data.nombre;
+                  document.getElementById("cantidad-edit").value =
+                    data.cantidad;
+                  document.getElementById("precio-edit").value = data.precio;
+                  document.getElementById("descripcion-edit").value =
+                    data.descripcion;
+
+                  $("#modalEditProducto").modal("show");
+                })
+                .catch((error) => {
+                  console.error(error);
+                  // Puedes manejar el error según sea necesario
+                });
+            } else {
+              console.error("El formulario no se encontró en el DOM.");
+            }
+          });
+        });
+
+        document
+          .getElementById("formularioProductoEdit")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Resto del código de modificación aquí...
+
+            // Envía la petición POST
+            fetch(this.action, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}",
+              },
+              body: JSON.stringify({
+                // Obtén los valores del formulario y ajústalos según sea necesario
+                nombre: document.getElementById("nombre-edit").value,
+                cantidad: document.getElementById("cantidad-edit").value,
+                precio: document.getElementById("precio-edit").value,
+                descripcion: document.getElementById("descripcion-edit").value,
+              }),
+            })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                if (data.message === "Producto modificado exitosamente.") {
+                  mostrarPopup();
+                  setTimeout(() => {
+                    location.reload(); // Recarga la página después de 3 segundos
+                  }, 3000);
+                }
+                $("#modalEditProducto").modal("hide");
+              });
+          });
+      });
     </script>
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"

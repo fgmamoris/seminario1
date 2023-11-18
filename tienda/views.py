@@ -1,3 +1,4 @@
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Producto
@@ -45,8 +46,40 @@ class ListaProductosView(TemplateView):
 
 class CrearProductoView(TemplateView):
     template_name = 'crear_producto.html'  
+class ModificarProductoView(TemplateView):
+    template_name = 'editar_producto.html'  
 
 def eliminar_producto(request, producto_id):
     producto = get_object_or_404(Producto, id=producto_id)
     producto.delete()
     return redirect('lista_productos')
+
+def modificar_producto(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id)
+
+    if request.method == 'PUT':
+        try:
+            data = json.loads(request.body)
+            form = ProductoForm(data, instance=producto)
+            if form.is_valid():
+                form.save()
+                return JsonResponse({'message': 'Producto modificado exitosamente.'}, status=200)
+            else:
+                return JsonResponse({'message': 'Error al modificar el producto.'}, status=400)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=500)
+    else:
+        form = ProductoForm(instance=producto)
+
+    return render(request, 'lista_productos.html', {'form': form, 'producto': producto})
+
+
+def obtener_producto(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id)
+    data = {
+        'nombre': producto.nombre,
+        'cantidad': producto.cantidad,
+        'precio': producto.precio,
+        'descripcion': producto.descripcion,
+    }
+    return JsonResponse(data)
