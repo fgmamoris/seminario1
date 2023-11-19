@@ -57,7 +57,7 @@ def eliminar_producto(request, producto_id):
 def modificar_producto(request, producto_id):
     producto = get_object_or_404(Producto, id=producto_id)
 
-    if request.method == 'PUT':
+    if request.method == 'POST':
         try:
             data = json.loads(request.body)
             form = ProductoForm(data, instance=producto)

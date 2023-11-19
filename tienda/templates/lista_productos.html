@@ -14,9 +14,17 @@
         var popup = document.getElementById("popup");
         popup.classList.add("show-popup");
       }
+      function mostrarPopupEdit() {
+        var popup = document.getElementById("popup-edit");
+        popup.classList.add("show-popup");
+      }
 
       function cerrarPopup() {
         var popup = document.getElementById("popup");
+        popup.classList.remove("show-popup");
+      }
+      function cerrarPopup() {
+        var popup = document.getElementById("popup-edit");
         popup.classList.remove("show-popup");
       }
     </script>
@@ -107,6 +115,58 @@
             aria-label=""
             style="display: inline-block"
             onclick="cerrarPopup()"
+          >
+            Cerrar
+          </button>
+        </div>
+        <div class="swal2-footer" style="display: none"></div>
+        <input
+          type="radio"
+          class="swal2-radio swal2-hide"
+          style="display: none"
+        />
+      </div>
+    </div>
+    <div id="popup-edit" class="popup">
+      <div class="swal2-popup swal2-show" style="display: flex">
+        <div class="swal2-header">
+          <ul class="swal2-progresssteps" style="display: none"></ul>
+          <div
+            class="swal2-icon swal2-success swal2-icon-show"
+            style="display: none"
+          >
+            <div
+              class="swal2-success-circular-line-left"
+              style="background-color: rgb(255, 255, 255)"
+            ></div>
+            <span class="swal2-success-line-tip"></span>
+            <span class="swal2-success-line-long"></span>
+            <div class="swal2-success-ring"></div>
+            <div
+              class="swal2-success-fix"
+              style="background-color: rgb(255, 255, 255)"
+            ></div>
+            <div
+              class="swal2-success-circular-line-right"
+              style="background-color: rgb(255, 255, 255)"
+            ></div>
+          </div>
+          <img
+            src="https://sweetalert2.github.io/images/thumbs-up.jpg"
+            class="swal2-image"
+            style="display: none"
+          />
+          <h2 class="swal2-title" id="swal2-title" style="display: flex">
+            Producto Modificado exitosamente
+          </h2>
+        </div>
+        <div class="swal2-actions">
+          <button
+            type="button"
+            class="swal2-confirm swal2-styled"
+            aria-label=""
+            style="display: inline-block"
+            onclick="cerrarPopupEdit()"
           >
             Cerrar
           </button>
@@ -445,7 +505,7 @@
               })
               .then((data) => {
                 if (data.message === "Producto modificado exitosamente.") {
-                  mostrarPopup();
+                  mostrarPopupEdit();
                   setTimeout(() => {
                     location.reload(); // Recarga la página después de 3 segundos
                   }, 3000);
