@@ -277,9 +277,7 @@
               >
                 Cerrar
               </button>
-              <button type="submit" class="btn btn-primary edit-button">
-                Guardar
-              </button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </div>
         </div>
@@ -304,7 +302,7 @@
             </div>
             <div class="col-md-4 d-flex justify-content-end align-items-center">
               <a
-                class="button"
+                class="button edit-button"
                 data-toggle="modal"
                 data-target="#modalEditProducto"
                 data-id="{{ producto.id }}"
@@ -385,6 +383,8 @@
             var productId = this.getAttribute("data-product-id");
             var modal = document.getElementById("modalEditProducto");
             var form = document.getElementById("formularioProductoEdit");
+            console.error("hola");
+            console.error(productId);
 
             if (form && productId) {
               form.dataset.productId = productId;
@@ -407,7 +407,7 @@
                   document.getElementById("precio-edit").value = data.precio;
                   document.getElementById("descripcion-edit").value =
                     data.descripcion;
-
+                  console.log("hola2");
                   $("#modalEditProducto").modal("show");
                 })
                 .catch((error) => {
@@ -424,8 +424,6 @@
           .getElementById("formularioProductoEdit")
           .addEventListener("submit", function (e) {
             e.preventDefault();
-
-            // Resto del código de modificación aquí...
 
             // Envía la petición POST
             fetch(this.action, {
