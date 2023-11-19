@@ -23,14 +23,14 @@
         var popup = document.getElementById("popup");
         popup.classList.remove("show-popup");
       }
-      function cerrarPopup() {
+      function cerrarPopupEdit() {
         var popup = document.getElementById("popup-edit");
         popup.classList.remove("show-popup");
       }
     </script>
   </head>
 
-  <body>
+  <body class="lista_productos">
     <div>
       <nav class="navbar">
         <div class="left">
@@ -287,7 +287,6 @@
               </button>
             </div>
             <div class="modal-body">
-              <!-- Agrega tu formulario aquí -->
               <div class="form-group">
                 <label for="nombre">Nombre del Producto</label>
                 <input
@@ -347,8 +346,8 @@
       <div class="col-md-8 d-flex align-items-center">
         <h1>Productos</h1>
       </div>
+      {% for producto in productos %}
       <div class="row">
-        {% for producto in productos %}
         <link rel="stylesheet" href="{% static '/css/style.css' %}" />
         <div class="col-md-12 producto">
           <img src="{% static 'caja.jpg' %}" alt="{{ producto.nombre }}" />
@@ -385,16 +384,14 @@
             <!-- <section id="pr2" class="ch"> -->
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
-
-    <!-- Resto de tu código HTML... -->
     <script>
       document
         .getElementById("formularioProducto")
         .addEventListener("submit", function (e) {
-          e.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
+          e.preventDefault();
           var nombre = document.getElementById("nombre").value;
           var cantidad = document.getElementById("cantidad").value;
           var precio = document.getElementById("precio").value;
@@ -413,7 +410,7 @@
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de tener el token CSRF disponible
+              "X-CSRFToken": "{{ csrf_token }}",
             },
             body: JSON.stringify({
               nombre: nombre,
@@ -472,7 +469,6 @@
                 })
                 .catch((error) => {
                   console.error(error);
-                  // Puedes manejar el error según sea necesario
                 });
             } else {
               console.error("El formulario no se encontró en el DOM.");
@@ -493,7 +489,6 @@
                 "X-CSRFToken": "{{ csrf_token }}",
               },
               body: JSON.stringify({
-                // Obtén los valores del formulario y ajústalos según sea necesario
                 nombre: document.getElementById("nombre-edit").value,
                 cantidad: document.getElementById("cantidad-edit").value,
                 precio: document.getElementById("precio-edit").value,

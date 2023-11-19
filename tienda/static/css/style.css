@@ -25,6 +25,10 @@ body.inicio {
   background-image: url("../img/depositoInicio.jpg");
   background-size: cover;
 }
+body.lista_productos {
+  background-image: url("../img/deposito2.jpeg");
+  background-size: cover;
+}
 
 /* Estilos generales del navbar */
 .navbar {
